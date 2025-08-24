@@ -1,8 +1,16 @@
 
+# DIVER: A Multi-Stage Approach for Reasoning-intensive Information Retrieval
 
-## Introduction
+While retrieval-augmented generation (RAG) excels at direct knowledge retrieval, it falters on complex queries that require abstract or multi-step reasoning. To bridge this gap, we developed **DIVER**, a retrieval pipeline engineered for these reasoning-intensive tasks.
+DIVER integrates four stages: document pre-processing, iterative LLM-driven query expansion, a specialized retriever fine-tuned on complex synthetic data, and a novel reranker that merges retrieval scores with LLM-generated helpfulness ratings. 
+On the [BRIGHT benchmark](https://brightbenchmark.github.io/), DIVER sets a new state-of-the-art, significantly outperforming other reasoning-aware models (**NDCG 45.8**). These results underscore the effectiveness of integrating deep reasoning into retrieval for solving complex, real-world problems.
+More details can be seen at [Diver paper](https://arxiv.org/abs/2508.07995).
 
-DIVER is a retrieval pipeline tailored for reasoning-intensive information retrieval. It consists of four components: Document processing to improve input quality, LLM-driven query expansion via iterative document interaction, a reasoning-enhanced retriever fine-tuned on synthetic multi-domain data with hard negatives, and a pointwise reranker that combines LLM-assigned helpfulness scores with retrieval scores.
+## Key Features
+
+1.LLM-Driven Query Expansion: Intelligently refines the search query.
+2.Reasoning-Enhanced Retriever: A fine-tuned model that understands complex relationships.
+3.Merged Reranker: Combines traditional search scores with LLM-based "helpfulness" scores for superior ranking.
 
 ## 🎉 Update
 - [2025-08-24] 🚀 We realeased our Diver V2, which reaches 45.8 on [Bright Leaderboard](https://brightbenchmark.github.io/).
