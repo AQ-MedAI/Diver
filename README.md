@@ -7,7 +7,7 @@ DIVER integrates four stages: document pre-processing, iterative LLM-driven quer
 On the [BRIGHT benchmark](https://brightbenchmark.github.io/), DIVER sets a new state-of-the-art, significantly outperforming other reasoning-aware models (**NDCG 45.8**). These results underscore the effectiveness of integrating deep reasoning into retrieval for solving complex, real-world problems.
 More details can be seen at [Diver paper](https://arxiv.org/abs/2508.07995).
 
-![benchmark](diver-bigpic-8-08251537.jpg)
+![benchmark](./diver-bigpic-8-08251537.jpg)
 
 ## Key Features
 
