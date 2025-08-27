@@ -10,7 +10,9 @@ More details can be seen at [Diver paper](https://arxiv.org/abs/2508.07995).
 ## Key Features
 
 1.LLM-Driven Query Expansion: Intelligently refines the search query.
+
 2.Reasoning-Enhanced Retriever: A fine-tuned model that understands complex relationships.
+
 3.Merged Reranker: Combines traditional search scores with LLM-based "helpfulness" scores for superior ranking.
 
 ## 🎉 Update
