@@ -18,6 +18,7 @@ More details can be seen at [Diver paper](https://arxiv.org/abs/2508.07995).
 3.Merged Reranker: Combines traditional search scores with LLM-based "helpfulness" scores for superior ranking.
 
 ## 🎉 Update
+- [2025-08-28] 🚀 We released our model at ModelScope.
 - [2025-08-24] 🚀 We realeased our Diver V2, which reaches 45.8 on [Bright Leaderboard](https://brightbenchmark.github.io/).
 - [2025-08-18] 🚀 We released our full codebase, including inference and SFT training.
 
@@ -28,7 +29,7 @@ You can download the following table to see the various parameters for your use 
 
 |      **Model**       | **#Total Params** | **Context Length** |                                                                        **Download**                                                                        |
 | :------------------: | :---------------: | :----------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|    DIVER-Retriver-4B    |       4B       |        40K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-4B <br>[🤖 ModelScope]     |
+|    DIVER-Retriver-4B    |       4B       |        40K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-4B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B     |
 
 
 
