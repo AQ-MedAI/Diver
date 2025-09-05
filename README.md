@@ -18,7 +18,7 @@ More details can be seen at [Diver paper](https://arxiv.org/abs/2508.07995).
 3.Merged Reranker: Combines traditional search scores with LLM-based "helpfulness" scores for superior ranking.
 
 ## 🎉 Update
-- [2025-09-05] 🚀 We released DIVER-Retriever-0.6B model at [ModelScope](https://modelscope.cn/models/AQ-MedAI/Diver-Retriever-0.6B) and [Hugging Face](https://huggingface.co/AQ-MedAI/Diver-Retriever-0.6B).
+- [2025-09-05] 🚀 We released DIVER-Retriever-0.6B model at [ModelScope](https://modelscope.cn/models/AQ-MedAI/Diver-Retriever-0.6B) and [Hugging Face](https://huggingface.co/AQ-MedAI/Diver-Retriever-0.6B), which achieve 25.2 at BRIGHT.
 - [2025-08-28] 🚀 We released our DIVER-Retriever-4B model at [ModelScope](https://modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B).
 - [2025-08-24] 🚀 We realeased our Diver V2, which reaches 45.8 on [Bright Leaderboard](https://brightbenchmark.github.io/).
 - [2025-08-18] 🚀 We released our full codebase, including inference and SFT training.
