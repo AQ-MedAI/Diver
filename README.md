@@ -18,7 +18,8 @@ More details can be seen at [Diver paper](https://arxiv.org/abs/2508.07995).
 3.Merged Reranker: Combines traditional search scores with LLM-based "helpfulness" scores for superior ranking.
 
 ## 🎉 Update
-- [2025-08-28] 🚀 We released our model at ModelScope.
+- [2025-09-05] 🚀 We released DIVER-Retriever-0.6B model at [ModelScope](https://modelscope.cn/models/AQ-MedAI/Diver-Retriever-0.6B) and [Hugging Face](https://huggingface.co/AQ-MedAI/Diver-Retriever-0.6B).
+- [2025-08-28] 🚀 We released our DIVER-Retriever-4B model at [ModelScope](https://modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B).
 - [2025-08-24] 🚀 We realeased our Diver V2, which reaches 45.8 on [Bright Leaderboard](https://brightbenchmark.github.io/).
 - [2025-08-18] 🚀 We released our full codebase, including inference and SFT training.
 
@@ -30,6 +31,7 @@ You can download the following table to see the various parameters for your use 
 |      **Model**       | **#Total Params** | **Context Length** |                                                                        **Download**                                                                        |
 | :------------------: | :---------------: | :----------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------: |
 |    DIVER-Retriver-4B    |       4B       |        40K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-4B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B     |
+|    DIVER-Retriver-0.6B    |       0.6B       |        32K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-0.6B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-0.6B     |
 
 
 
@@ -224,7 +226,23 @@ You can download the following table to see the various parameters for your use 
         <td style="text-align:right">30.5</td>
     </tr>
     <tr>
-        <td>DIVER-Retriever</td>
+        <td>DIVER-Retriever-0.6B</td>
+        <td style="text-align:right">25.2</td>
+        <td style="text-align:right">36.4</td>
+        <td style="text-align:right">41.9</td>
+        <td style="text-align:right">29.0</td>
+        <td style="text-align:right">31.0</td>
+        <td style="text-align:right">21.2</td>
+        <td style="text-align:right">24.6</td>
+        <td style="text-align:right">23.2</td>
+        <td style="text-align:right">15.6</td>
+        <td style="text-align:right">6.8</td>
+        <td style="text-align:right">8.4</td>
+        <td style="text-align:right">33.2</td>
+        <td style="text-align:right">31.7</td>
+    </tr>
+    <tr>
+        <td>DIVER-Retriever-4B</td>
         <td style="text-align:right"><strong>28.9</strong></td>
         <td style="text-align:right"><strong>41.8</strong></td>
         <td style="text-align:right">43.7</td>
@@ -371,7 +389,7 @@ You can download the following table to see the various parameters for your use 
         <td style="text-align:right"><strong>43.4</strong></td>
     </tr>
     <tr>
-        <td>DIVER-Retriever</td>
+        <td>DIVER-Retriever-4B</td>
         <td style="text-align:right"><strong>32.1</strong></td>
         <td style="text-align:right">51.9</td>
         <td style="text-align:right">53.5</td>
