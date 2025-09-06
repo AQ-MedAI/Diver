@@ -5,7 +5,9 @@
 
 ## 🎉 更新列表
 
-- [2025-08-24] 我们更新了Diver V2，在[Bright Leaderboard](https://brightbenchmark.github.io/)效果进一步提升至45.8。
+- [2025-09-05] 🚀 我们在 [ModelScope](https://modelscope.cn/models/AQ-MedAI/Diver-Retriever-0.6B)和[Hugging Face](https://huggingface.co/AQ-MedAI/Diver-Retriever-0.6B)上发布了 DIVER-Retriever-0.6B 模型，在 BRIGHT 基准上取得了 25.2 的成绩。
+- [2025-08-28] 🚀 我们在  [ModelScope](https://modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B) 上发布了 DIVER-Retriever-4B 模型。
+- [2025-08-24] 🏆 我们更新了Diver V2，在[Bright Leaderboard](https://brightbenchmark.github.io/)效果进一步提升至45.8。
 - [2025-08-18] 🚀 我们开源了Diver的整体代码库包括推理和训练。
 
 ## 模型下载
@@ -14,7 +16,8 @@
 
 |      **Model**       | **#Total Params** | **Context Length** |                                                                        **Download**                                                                        |
 | :------------------: | :---------------: | :----------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|    DIVER-Retriver-4B    |       4B       |        40K         |     [🤗 HuggingFace https://huggingface.co/AQ-MedAI/Diver-Retriever-4B ]<br>[🤖 ModelScope]     |
+|    DIVER-Retriver-4B    |       4B       |        40K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-4B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B     |
+|    DIVER-Retriver-0.6B    |       0.6B       |        32K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-0.6B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-0.6B     |
 
 
 
@@ -208,7 +211,23 @@
         <td style="text-align:right">30.5</td>
     </tr>
     <tr>
-        <td>DIVER-Retriever</td>
+        <td>DIVER-Retriever-0.6B</td>
+        <td style="text-align:right">25.2</td>
+        <td style="text-align:right">36.4</td>
+        <td style="text-align:right">41.9</td>
+        <td style="text-align:right">29.0</td>
+        <td style="text-align:right">31.0</td>
+        <td style="text-align:right">21.2</td>
+        <td style="text-align:right">24.6</td>
+        <td style="text-align:right">23.2</td>
+        <td style="text-align:right">15.6</td>
+        <td style="text-align:right">6.8</td>
+        <td style="text-align:right">8.4</td>
+        <td style="text-align:right">33.2</td>
+        <td style="text-align:right">31.7</td>
+    </tr>
+    <tr>
+        <td>DIVER-Retriever-4B</td>
         <td style="text-align:right"><strong>28.9</strong></td>
         <td style="text-align:right"><strong>41.8</strong></td>
         <td style="text-align:right">43.7</td>
@@ -237,7 +256,7 @@
         <td style="text-align:right">27.7</td>
         <td style="text-align:right">26.3</td>
         <td style="text-align:right">19.3</td>
-        <td style="text-align:right"><strong>17.6</strong></td>
+        <td style="text-align:right">17.6</td>
         <td style="text-align:right">3.9</td>
         <td style="text-align:right">19.2</td>
         <td style="text-align:right">20.8</td>
@@ -355,7 +374,7 @@
         <td style="text-align:right"><strong>43.4</strong></td>
     </tr>
     <tr>
-        <td>DIVER-Retriever</td>
+        <td>DIVER-Retriever-4B</td>
         <td style="text-align:right"><strong>32.1</strong></td>
         <td style="text-align:right">51.9</td>
         <td style="text-align:right">53.5</td>
