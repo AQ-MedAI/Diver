@@ -671,3 +671,7 @@ If you find our work helpful, feel free to give us a cite.
 ## Acknowledgement
 
 We thank prior works and their open-source repositories: BRIGHT, ReasonIR, RaDer, ThinkQE.
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=AQ-MedAI/Diver&type=Date)](https://www.star-history.com/#AQ-MedAI/Diver&Date)

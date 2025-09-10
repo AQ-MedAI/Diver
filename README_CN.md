@@ -12,7 +12,7 @@
 
 ## 待办列表
 
-- [ ] **开源 Reranker：发布源码与模型**
+- [ ] 开源 **DIVER-Reranker**：发布源码与模型
 
 
 ## 模型下载
@@ -592,3 +592,6 @@ swift sft \
 
 我们感谢之前的相关研究以及它们所发布的开源资源：BRIGHT、ReasonIR、RaDer、ThinkQE。
 
+## Star趋势
+
+[![Star History Chart](https://api.star-history.com/svg?repos=AQ-MedAI/Diver&type=Date)](https://www.star-history.com/#AQ-MedAI/Diver&Date)
