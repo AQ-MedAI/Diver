@@ -1,6 +1,6 @@
 
 # DIVER: A Multi-Stage Approach for Reasoning-intensive Information Retrieval
-【📄[中文](./README_CN.md) | 📖 [arXiv](https://arxiv.org/pdf/2508.07995) | 🤗 [HF Papers](https://huggingface.co/papers/2508.07995) | 🚀 [Diver Models](https://huggingface.co/AQ-MedAI/Diver-Retriever-4B)】
+【 📄 [中文](./README_CN.md) | 📖 [arXiv](https://arxiv.org/pdf/2508.07995) | 🤗 [HF Papers](https://huggingface.co/papers/2508.07995) | 🚀 [Diver Models](https://huggingface.co/AQ-MedAI/Diver-Retriever-4B)】
 
 While retrieval-augmented generation (RAG) excels at direct knowledge retrieval, it falters on complex queries that require abstract or multi-step reasoning. To bridge this gap, we developed **DIVER**, a retrieval pipeline engineered for these reasoning-intensive tasks.
 DIVER integrates four stages: document pre-processing, iterative LLM-driven query expansion, a specialized retriever fine-tuned on complex synthetic data, and a novel reranker that merges retrieval scores with LLM-generated helpfulness ratings. 
@@ -22,6 +22,11 @@ More details can be seen at [Diver paper](https://arxiv.org/abs/2508.07995).
 - [2025-08-28] 🚀 We released our DIVER-Retriever-4B model at [ModelScope](https://modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B).
 - [2025-08-24] 🏆 We released our Diver V2, which reaches 45.8 on [Bright Leaderboard](https://brightbenchmark.github.io/).
 - [2025-08-18] 🚀 We released our full codebase, including inference and SFT training.
+
+## TODO List
+
+- [ ] **Open source Reranker: Release source code and models**
+
 
 ## Model Downloads
 
