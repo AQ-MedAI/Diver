@@ -25,7 +25,7 @@ More details can be seen at [Diver paper](https://arxiv.org/abs/2508.07995).
 
 ## TODO List
 
-- [ ] **Open source Reranker: Release source code and models**
+- [ ] Open **DIVER-Reranker**: Release source code and models
 
 
 ## Model Downloads
