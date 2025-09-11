@@ -66,7 +66,7 @@ def process_single_query(qid, scores, examples, documents, args, rerank_prompt, 
     try:
         output_str = call_api(client, payload)
         # print(output_str)
-        res = _reranker_after(output_str=)
+        res = _reranker_after(output_str)
         return qid, res, cands
     except Exception as e:
         print(f"Error processing qid {qid}: {e}")
