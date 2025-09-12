@@ -18,6 +18,8 @@ More details can be seen at [Diver paper](https://arxiv.org/abs/2508.07995).
 3.Merged Reranker: Combines traditional search scores with LLM-based "helpfulness" scores for superior ranking.
 
 ## 🎉 Update
+
+- [2025-09-12] 🚀 We released the code for listwise reranking using Gemini; it can be found at [./Retriever/rerank_listwise.py](./Retriever/rerank_listwise.py), and it achieved a score of 43.9 on BRIGHT.
 - [2025-09-05] 🚀 We released DIVER-Retriever-0.6B model at [ModelScope](https://modelscope.cn/models/AQ-MedAI/Diver-Retriever-0.6B) and [Hugging Face](https://huggingface.co/AQ-MedAI/Diver-Retriever-0.6B), which achieve 25.2 at BRIGHT.
 - [2025-08-28] 🚀 We released our DIVER-Retriever-4B model at [ModelScope](https://modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B).
 - [2025-08-24] 🏆 We released our Diver V2, which reaches 45.8 on [Bright Leaderboard](https://brightbenchmark.github.io/).
@@ -589,6 +591,36 @@ print(scores.tolist())
 # [[0.9319270849227905, 0.5878604054450989], [0.639923095703125, 0.7950234413146973]]
 ```
 
+vLLM usage
+```python
+# Requires vllm>=0.8.5
+import torch
+import vllm
+from vllm import LLM
+
+def get_detailed_instruct(task_description: str, query: str) -> str:
+    return f'Instruct: {task_description}\nQuery:{query}'
+
+# Each query must come with a one-sentence instruction that describes the task
+task = 'Given a web search query, retrieve relevant passages that answer the query'
+
+queries = [
+    get_detailed_instruct(task, 'What is the capital of China?'),
+    get_detailed_instruct(task, 'Explain gravity')
+]
+# No need to add instruction for retrieval documents
+documents = [
+    "The capital of China is Beijing.",
+    "Gravity is a force that attracts two bodies towards each other. It gives weight to physical objects and is responsible for the movement of planets around the sun."
+]
+input_texts = queries + documents
+
+model = LLM(model="Qwen/Qwen3-Embedding-0.6B", task="embed")
+
+outputs = model.embed(input_texts)
+embeddings = torch.tensor([o.outputs.embedding for o in outputs])
+scores = (embeddings[:2] @ embeddings[2:].T)
+```
 
 
 
@@ -670,7 +702,7 @@ If you find our work helpful, feel free to give us a cite.
 
 ## Acknowledgement
 
-We thank prior works and their open-source repositories: BRIGHT, ReasonIR, RaDer, ThinkQE.
+We thank prior works and their open-source repositories: [BRIGHT](https://github.com/xlang-ai/BRIGHT), [ReasonIR](https://github.com/facebookresearch/ReasonIR), [RaDer](https://anonymous.4open.science/r/project-D27D/README.md), [ThinkQE](https://github.com/Yibin-Lei/Think_QE), [Qwen3-Embedding](https://github.com/QwenLM/Qwen3-Embedding).
 
 ## Star History
 

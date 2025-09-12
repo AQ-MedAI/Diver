@@ -5,6 +5,7 @@
 
 ## 🎉 更新列表
 
+- [2025-09-12] 🚀 我们发布了使用 Gemini 的 listwise 重排序代码；可以在 [./Retriever/rerank_listwise.py](./Retriever/rerank_listwise.py) 找到，并在 BRIGHT 上取得了 43.9 的得分。
 - [2025-09-05] 🚀 我们在 [ModelScope](https://modelscope.cn/models/AQ-MedAI/Diver-Retriever-0.6B)和[Hugging Face](https://huggingface.co/AQ-MedAI/Diver-Retriever-0.6B)上发布了 DIVER-Retriever-0.6B 模型，在 BRIGHT 基准上取得了 25.2 的成绩。
 - [2025-08-28] 🚀 我们在  [ModelScope](https://modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B) 上发布了 DIVER-Retriever-4B 模型。
 - [2025-08-24] 🏆 我们更新了Diver V2，在[Bright Leaderboard](https://brightbenchmark.github.io/)效果进一步提升至45.8。
@@ -513,6 +514,39 @@ print(similarity)
 
 ```
 
+
+vLLM usage
+```python
+# Requires vllm>=0.8.5
+import torch
+import vllm
+from vllm import LLM
+
+def get_detailed_instruct(task_description: str, query: str) -> str:
+    return f'Instruct: {task_description}\nQuery:{query}'
+
+# Each query must come with a one-sentence instruction that describes the task
+task = 'Given a web search query, retrieve relevant passages that answer the query'
+
+queries = [
+    get_detailed_instruct(task, 'What is the capital of China?'),
+    get_detailed_instruct(task, 'Explain gravity')
+]
+# No need to add instruction for retrieval documents
+documents = [
+    "The capital of China is Beijing.",
+    "Gravity is a force that attracts two bodies towards each other. It gives weight to physical objects and is responsible for the movement of planets around the sun."
+]
+input_texts = queries + documents
+
+model = LLM(model="Qwen/Qwen3-Embedding-0.6B", task="embed")
+
+outputs = model.embed(input_texts)
+embeddings = torch.tensor([o.outputs.embedding for o in outputs])
+scores = (embeddings[:2] @ embeddings[2:].T)
+```
+
+
 ## 训练
 
 我们建议您使用 [swift](https://github.com/modelscope/ms-swift) 来对我们的 DIVER-Retriever-4B 进行微调。
@@ -590,7 +624,7 @@ swift sft \
 
 ## 致谢
 
-我们感谢之前的相关研究以及它们所发布的开源资源：BRIGHT、ReasonIR、RaDer、ThinkQE。
+我们感谢之前的相关研究以及它们所发布的开源资源：[BRIGHT](https://github.com/xlang-ai/BRIGHT), [ReasonIR](https://github.com/facebookresearch/ReasonIR), [RaDer](https://anonymous.4open.science/r/project-D27D/README.md), [ThinkQE](https://github.com/Yibin-Lei/Think_QE), [Qwen3-Embedding](https://github.com/QwenLM/Qwen3-Embedding)。
 
 ## Star趋势
 
