@@ -1,9 +1,8 @@
 # tasks=("biology" "earth_science" "economics" "psychology" "robotics" "stackoverflow" "sustainable_living" "leetcode" "pony" "aops" "theoremqa_theorems" "theoremqa_questions")
 tasks=("biology")
 
-model_path=./model/qwen3-4b-embedding-ft-hardneg-and-en-and-med-and-rader-1x8a100-medalgo/v2-20250802-104251/checkpoint-5000
-
-model_name=qwen3_4b_med_and_rader
+model_path=AQ-MedAI/Diver-Retriever-4B
+model_name=diver-retriever
 NUM_INTERACTION=2
 KEEP_PASSAGE_NUM=5
 GEN_NUM=1
