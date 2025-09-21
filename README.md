@@ -656,7 +656,7 @@ pip install flash-attn --no-build-isolation
 
 ### Training Command
 
-Using infonce loss as an example, the complete training command is as follows:
+Using the infonce loss as an example, the complete training command is as follows:
 
 ```bash
 nproc_per_node=8
@@ -687,7 +687,7 @@ swift sft \
 
 ## Citation
 
-If you find our work helpful, feel free to give us a cite.
+If you think our work is helpful, please feel free to give us a cite.
 
 ```
 @misc{DIVER,
