@@ -22,8 +22,8 @@
 
 |      **Model**       | **#Total Params** | **Context Length** |                                                                        **Download**                                                                        |
 | :------------------: | :---------------: | :----------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|    DIVER-Retriver-4B    |       4B       |        40K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-4B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B     |
-|    DIVER-Retriver-0.6B    |       0.6B       |        32K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-0.6B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-0.6B     |
+|    DIVER-Retriever-4B    |       4B       |        40K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-4B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B     |
+|    DIVER-Retriever-0.6B    |       0.6B       |        32K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-0.6B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-0.6B     |
 
 
 

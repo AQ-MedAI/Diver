@@ -38,8 +38,8 @@ You can download the following table to see the various parameters for your use 
 
 |      **Model**       | **#Total Params** | **Context Length** |                                                                        **Download**                                                                        |
 | :------------------: | :---------------: | :----------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|    DIVER-Retriver-4B    |       4B       |        40K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-4B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B     |
-|    DIVER-Retriver-0.6B    |       0.6B       |        32K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-0.6B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-0.6B     |
+|    DIVER-Retriever-4B    |       4B       |        40K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-4B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B     |
+|    DIVER-Retriever-0.6B    |       0.6B       |        32K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-0.6B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-0.6B     |
 
 
 
@@ -64,7 +64,7 @@ You can download the following table to see the various parameters for your use 
 | **DIVER V2** | **45.8** | **68** | 62.5 | **42.0** | **58.2** | **41.5** | **44.3** | **49.2** | 34.8 | 32.9 | **19.1** | **44.3** | 52.6 |
 
 
-### Diver Retriver Evaluation
+### Diver Retriever Evaluation
 
 <table>
 <thead>
