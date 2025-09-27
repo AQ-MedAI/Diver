@@ -19,7 +19,7 @@ More details can be seen at [Diver paper](https://arxiv.org/abs/2508.07995).
 
 ## 🎉 Update
 
-- [2025-09-18] 🎉 Our Diver-Retriever-4B model have achieved 1.8k+ downloads at [🤗 HuggingFace](https://huggingface.co/AQ-MedAI/Diver-Retriever-4B) ! 
+- [2025-09-27] 🎉 Our Diver-Retriever-4B model have achieved 2.64k+ downloads at [🤗 HuggingFace](https://huggingface.co/AQ-MedAI/Diver-Retriever-4B) ! 
 - [2025-09-12] 🚀 We released the code for listwise reranking using Gemini; it can be found at [./Retriever/rerank_listwise.py](./Retriever/rerank_listwise.py), and it achieved a score of 43.9 on BRIGHT.
 - [2025-09-05] 🚀 We released DIVER-Retriever-0.6B model at [ModelScope](https://modelscope.cn/models/AQ-MedAI/Diver-Retriever-0.6B) and [Hugging Face](https://huggingface.co/AQ-MedAI/Diver-Retriever-0.6B), which achieve 25.2 at BRIGHT.
 - [2025-08-28] 🚀 We released our DIVER-Retriever-4B model at [ModelScope](https://modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B).
