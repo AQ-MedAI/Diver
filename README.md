@@ -491,13 +491,43 @@ You can download the following table to see the various parameters for your use 
 
 ### Inference 
 
-####  One-click Reproduction
+#### Reproduction Our Results on BRIGHT benchmark
+One-click reproduction：
 ```bash
 sh run_all.sh
 ```
+or step-by-step reproduction：
+```
+# 0.1 Download BRIGHT dataset
+cd Diver
+git clone https://huggingface.co/datasets/xlangai/BRIGHT ./data/BRIGHT
+# or modelscope download --dataset xlangai/BRIGHT --local_dir ./data/BRIGHT  # more faster in China
 
-#### Diver Retriever Inference (Hugging Face Transformers)
-Sentence Transformers Usage 
+# 0.2 Download models
+mkdir models && cd models
+git clone https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-14B  # for DIVER-QExpand
+git clone https://huggingface.co/AQ-MedAI/Diver-Retriever-4B  # for DIVER-Qexpand and DIVER-Retriever
+cd ..
+
+# 1. DIVER-QExpand
+cd ./QExpand
+bash run_qexpand.sh
+
+# 2. DIVER-Retriever, achiving 33.9 NDCG@10, as reported in Table 3 of our paper: https://arxiv.org/pdf/2508.07995
+cd ../Retriever
+bash retriever_script.sh
+# merge BM25 and DIVER-Retriever scores, achiving 37.2 NDCG@10 in Table 3 of our paper
+python merge_score.py
+
+# 3. DIVER-Reranker (v1 version with only pointwise reranker), achieving 41.6 NDCG@10 as shown in Table 2 of our paper
+# cd ./Retriever
+bash reranker_script.sh  
+```
+
+
+#### Different Inference Methods for Diver Retriever
+If you only want to do a simple test, below are examples of how to use the retriever with different frameworks:
+1. Sentence Transformers Usage 
 ```bash
 # Requires transformers>=4.51.0
 # Requires sentence-transformers>=2.7.0
@@ -530,7 +560,7 @@ print(similarity)
 
 ```
 
-Transformers Usage
+2. Transformers Usage
 ```bash
 # Requires transformers>=4.51.0
 import torch
@@ -593,7 +623,7 @@ print(scores.tolist())
 # [[0.9319270849227905, 0.5878604054450989], [0.639923095703125, 0.7950234413146973]]
 ```
 
-vLLM usage
+3. vLLM usage
 ```python
 # Requires vllm>=0.8.5
 import torch
