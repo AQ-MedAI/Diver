@@ -5,6 +5,7 @@
 
 ## 🎉 更新列表
 
+- [2025-10-20] 🚀 我们在 [ModelScope](https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B-1020)和[Hugging Face](https://huggingface.co/AQ-MedAI/Diver-Retriever-4B-1020)上发布了 DIVER-Retriever-4B-1020 模型，在 BRIGHT 基准上取得了 31.9 的成绩。
 - [2025-10-14] 🚀 我们在 [ModelScope](https://modelscope.cn/models/AQ-MedAI/Diver-Retriever-1.7B)和[Hugging Face](https://huggingface.co/AQ-MedAI/Diver-Retriever-1.7B)上发布了 DIVER-Retriever-1.7B 模型，在 BRIGHT 基准上取得了 27.3 的成绩。
 - [2025-09-12] 🚀 我们发布了使用 Gemini 的 listwise 重排序代码；可以在 [./Retriever/rerank_listwise.py](./Retriever/rerank_listwise.py) 找到，并在 BRIGHT 上取得了 43.9 的得分。
 - [2025-09-05] 🚀 我们在 [ModelScope](https://modelscope.cn/models/AQ-MedAI/Diver-Retriever-0.6B)和[Hugging Face](https://huggingface.co/AQ-MedAI/Diver-Retriever-0.6B)上发布了 DIVER-Retriever-0.6B 模型，在 BRIGHT 基准上取得了 25.2 的成绩。
@@ -23,6 +24,7 @@
 
 |      **Model**       | **#Total Params** | **Context Length** |                                                                        **Download**                                                                        |   **BRIGHT**       |
 | :------------------: | :---------------: | :----------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------: | 
+|    DIVER-Retriever-4B-1020    |       4B       |        40K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-4B-1020 <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B-1020     | **31.9** |
 |    DIVER-Retriever-4B    |       4B       |        40K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-4B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B     | **28.9** |
 |    DIVER-Retriever-1.7B    |       1.7B       |        40K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-1.7B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-1.7B     | **27.3** |
 |    DIVER-Retriever-0.6B    |       0.6B       |        32K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-0.6B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-0.6B     | **25.2** |
