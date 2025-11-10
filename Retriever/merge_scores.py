@@ -73,21 +73,21 @@ def get_metrics_by_score(task, score_file):
 
 
 if __name__ == "__main__":
-    q_extend = "diver_qexpand"
+    q_extend = "diver-qexpand"
     model_bm25 = 'bm25'
-    model_dense = "diver"  # qwen3_4b_5kep_med_rader, reasonir
+    model_dense = "diver-retriever"  # qwen3_4b_5kep_med_rader, reasonir
     dataset_source = "../data/BRIGHT"
+    output_dir = f"./output/merge_{q_extend}_{model_bm25}_{q_extend}_{model_dense}"
 
     results = pd.DataFrame()
 
 
     for task in ["biology", "earth_science", "economics", "psychology", "robotics", "stackoverflow", "sustainable_living", "leetcode", "pony", "aops", "theoremqa_theorems", "theoremqa_questions"]:
-        bm25_file = f"./output/{model_bm25}_{q_extend}_reasoning_diver/{task}_{model_bm25}_long_False/{q_extend}_score.json"
+        bm25_file = f"./output/{model_bm25}_{q_extend}_reasoning/{task}_{model_bm25}_long_False/{q_extend}_score.json"
 
         # dense_file = f"./output/reasonir_None_reasoning/{task}_reasonir_long_False/score.json"  # none+reasonir
-        dense_file = f"./output/{model_dense}_{q_extend}_reasoning_diver/{task}_{model_dense}_long_False/{q_extend}_score.json"  
-
-        output_dir = f"./output/merge_{q_extend}_{model_bm25}_{q_extend}_{model_dense}_diver"
+        dense_file = f"./output/{model_dense}_{q_extend}_reasoning/{task}_{model_dense}_long_False/{q_extend}_score.json"  
+        
         task_subdir = os.path.join(output_dir, f"{task}_{model_bm25}_{model_dense}")
         os.makedirs(task_subdir, exist_ok=True)  
         output_task_score_file = os.path.join(task_subdir, f"{task}_merge_score.json")

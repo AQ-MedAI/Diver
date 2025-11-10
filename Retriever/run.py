@@ -18,6 +18,7 @@ if __name__=='__main__':
                                  'bge_ce', 'nomic', 'm2', 'contriever', 'reasonir', 'rader', 'diver-retriever'])
     parser.add_argument('--model_id', type=str, default=None, help='(Optional) Pass a different model ID for cache and output path naming.')
     parser.add_argument('--long_context', action='store_true')
+    parser.add_argument('--dataset_source', type=str, default='../data/BRIGHT')
     parser.add_argument('--document_expansion', default=None, type=str, choices=[None, 'gold', 'full', 'rechunk'],
                         help="Set to None to use original documents provided by BRIGHT; Set to `oracle` to use documents with oracle ones expanded'; Set to `full` to use all expanded documents.")
     parser.add_argument('--global_summary', default=None, choices=[None, 'concat'])
@@ -56,47 +57,32 @@ if __name__=='__main__':
     if args.global_summary:
         assert not args.long_context, "Global summary is supposed to enhance short-context retrieval!"
 
+    dataset_source = args.dataset_source
     document_postfix = ''
     if args.document_expansion == 'gold':
         document_postfix = '_expanded_gold_only'
         dataset_source = 'rulins/bright-expanded'
-    # elif args.document_expansion == 'full':
-    #     document_postfix = '_expanded'
-    #     dataset_source = 'rulins/bright-expanded'
-    # elif args.global_summary == 'concat':
-    #     document_postfix = '_concat_with_summary'
-    #     dataset_source = 'rulins/bright-expanded'
     elif args.document_expansion == 'rechunk':
         document_postfix = 'rechunk'
-        dataset_source = '../data/BRIGHT'
-    else:
-        # dataset_source = 'xlangai/BRIGHT'
-        dataset_source = '../data/BRIGHT'
     
-    if args.reasoning is not None and 'llama3-8b' in args.reasoning:
-        reasoning_source = 'dreamorg/BRIGHT'
-    else:
-        # reasoning_source = 'xlangai/BRIGHT'
-        reasoning_source = '../data/BRIGHT'
-
     print(f"Dataset source: {dataset_source}")
-    print(f"Reasoning source: {reasoning_source}")
+    # print(f"Reasoning source: {reasoning_source}")
 
     if args.input_file is not None:
         with open(args.input_file) as f:
             examples = json.load(f)
     elif args.reasoning is not None and args.separate_reasoning:
         examples = load_dataset(dataset_source, 'examples', cache_dir=args.cache_dir)[args.task]
-        reasoning_examples = load_dataset(reasoning_source, f"{args.reasoning}_reason", cache_dir=args.cache_dir)[args.task]
+        reasoning_examples = load_dataset(dataset_source, f"{args.reasoning}_reason", cache_dir=args.cache_dir)[args.task]
     elif args.reasoning is not None and args.reasoning_length_limit is None:
         if args.reasoning in ['xrr2']:
-            json_path = os.path.join(reasoning_source, f"{args.reasoning}_reason", f"{args.task}_query.json")
+            json_path = os.path.join(dataset_source, f"{args.reasoning}_reason", f"{args.task}_query.json")
             examples = load_dataset("json", data_files=json_path)["train"]
-        elif args.reasoning in ['thinkqe', 'diver_qexpand']:
+        elif args.reasoning in ['thinkqe', 'diver-qexpand']:
             # examples = load_dataset(dataset_source, 'examples',cache_dir=args.cache_dir)[args.task]  # 包含字典里所有data
             examples = load_dataset("parquet", data_files=os.path.join(dataset_source, f"examples/{args.task}-00000-of-00001.parquet"))["train"]
             # replacing original query with expanded query
-            json_path = f"../output/{args.reasoning}/{args.task}/_aug2_result_retrieval.expand_query.json"
+            json_path = f"{dataset_source}/output/{args.reasoning}/{args.task}/diver_aug2_result_retrieval.expand_query.json"
             id_exp_query = load_dataset("json", data_files=json_path)["train"]
             
             id_query_dict = {str(item["id"]): item["query"] for item in id_exp_query}
@@ -108,7 +94,7 @@ if __name__=='__main__':
 
             examples = examples.map(replace_query, num_proc=4)
         else:
-            # examples = load_dataset(reasoning_source, f"{args.reasoning}_reason", cache_dir=args.cache_dir)[args.task]
+            # examples = load_dataset(dataset_source, f"{args.reasoning}_reason", cache_dir=args.cache_dir)[args.task]
             examples = load_dataset("parquet", data_files=os.path.join(dataset_source, f"{args.reasoning}_reason", f"{args.task}-00000-of-00001.parquet"))["train"]
 
     elif args.reasoning is not None and args.reasoning_length_limit:
@@ -143,7 +129,7 @@ if __name__=='__main__':
 
     if not os.path.isfile(score_file_path):
         print("The scores file does not exist, start retrieving...")
-        if args.model in ['bm25', 'rader', 'reasonir']:
+        if args.model in ['rader', 'reasonir']:
             with open(os.path.join(args.config_dir,args.model.split('_ckpt')[0].split('_bilevel')[0],f"{args.task}.json")) as f:
                 config = json.load(f)
         else:

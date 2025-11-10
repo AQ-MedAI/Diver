@@ -913,8 +913,8 @@ def retrieval_qwen3_ft_diver(queries,query_ids,documents,doc_ids,task,model_id,i
     cache_model_name = kwargs.get('model_name', 'diver')
     batch_size = kwargs.get('encode_batch_size',1)
 
-    model_path = 'AQ-MedAI/Diver-Retriever-4B'
-    model = Qwen3EmbeddingModel(model_path, max_length=32768)
+    model_path = '../models/Diver-Retriever-4B'
+    model = Qwen3EmbeddingModel(model_path, max_length=16384)
 
     # Check if documents are already encoded 
     document_postfix = '_'+kwargs['document_postfix'] if len(kwargs['document_postfix']) > 0 else ''
