@@ -7,6 +7,7 @@ git clone https://huggingface.co/datasets/xlangai/BRIGHT ./data/BRIGHT
 mkdir models && cd models
 git clone https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-14B  # for DIVER-QExpand
 git clone https://huggingface.co/AQ-MedAI/Diver-Retriever-4B  # for DIVER-Qexpand and DIVER-Retriever
+git clone https://huggingface.co/Qwen/Qwen2.5-32B-Instruct  # for DIVER-Rerank
 cd ..
 
 # 1. DIVER-QExpand

@@ -56,7 +56,7 @@ def process_single_query(qid, scores, examples, documents, args, rerank_prompt, 
     prompt = rerank_prompt.format(QUERY=examples[qid]['query'], DOC_STR=doc_str, TOPK=args.k)
 
     payload = {
-        "model": "gemini-2.5-flash",
+        "model": args.llm_model,
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0.8,
         "top_p": 0.8,
@@ -86,10 +86,10 @@ if __name__=='__main__':
     parser.add_argument('--reasoning', type=str, default=None)
     parser.add_argument('--bm25_score_file', type=str, default=None)
     parser.add_argument('--output_dir', type=str, default=None)
-    parser.add_argument('--rerank_style', type=str, default='point')
     parser.add_argument('--max_workers', type=int, default=1, help='Maximum number of threads for parallel processing') 
+    parser.add_argument('--base_url', type=str, default='https://generativelanguage.googleapis.com/v1beta/openai/')
     parser.add_argument('--api_key', type=str, default='')
-
+    parser.add_argument('--llm_model', type=str, default='gemini-2.5-flash')
 
     args = parser.parse_args()
 
@@ -119,8 +119,8 @@ if __name__=='__main__':
     score_file_path = os.path.join(outputs_path, f"{args.reasoning}_score.json")
 
     client = OpenAI(
-    api_key="None",
-    base_url="",
+    api_key=args.api_key,
+    base_url=args.base_url
     )
 
     rerank_prompt = '''The following documents are related to query: {QUERY}

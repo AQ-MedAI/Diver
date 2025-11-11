@@ -18,7 +18,7 @@ More details can be seen at [Diver paper](https://arxiv.org/abs/2508.07995).
 3.Merged Reranker: Combines traditional search scores with LLM-based "helpfulness" scores for superior ranking.
 
 ## 🎉 Update
-
+- [2025-11-11] Environment installation guide is provided in [./env_requirements/README.md](./env_requirements/README.md) for reproduction. The code for merging pointwise and listwise rerankers is at [./Retriever/rerank_merge_point_and_list.py](./Retriever/rerank_merge_point_and_list.py). 
 - [2025-10-20] 🚀 We released DIVER-Retriever-4B-1020 model at [ModelScope](https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B-1020) and [Hugging Face](https://huggingface.co/AQ-MedAI/Diver-Retriever-4B-1020), which achieve 31.9 at BRIGHT.
 - [2025-10-14] 🚀 We released DIVER-Retriever-1.7B model at [ModelScope](https://modelscope.cn/models/AQ-MedAI/Diver-Retriever-1.7B) and [Hugging Face](https://huggingface.co/AQ-MedAI/Diver-Retriever-1.7B), which achieve 27.3 at BRIGHT.
 - [2025-09-27] 🎉 Our Diver-Retriever-4B model have achieved monthly 2.64k+ downloads at [🤗 HuggingFace](https://huggingface.co/AQ-MedAI/Diver-Retriever-4B) ! 

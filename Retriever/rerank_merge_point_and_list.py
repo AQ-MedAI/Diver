@@ -83,14 +83,13 @@ if __name__=='__main__':
     else:
         point_rerank_scores = None
 
+    # 加权两种排名后的输出文件
+    outputs_path = args.output_dir  
+    if not os.path.exists(outputs_path):
+        os.makedirs(outputs_path)
+    score_file_path = os.path.join(outputs_path, f"{args.reasoning}_score.json")
 
     if point_rerank_scores is not None:
-        # 加权两种排名后的输出文件
-        outputs_path = args.output_dir  
-        if not os.path.exists(outputs_path):
-            os.makedirs(outputs_path)
-
-        # 计算分数
         rerank_interpolated_scores = {}
         for qid in point_rerank_scores:
             rerank_interpolated_scores[qid] = {}
@@ -98,9 +97,5 @@ if __name__=='__main__':
                 rerank_interpolated_scores[qid][did] = 0.6 * point_rerank_scores[qid][did] + 0.4 * list_rerank_scores[qid][did]
             rerank_interpolated_scores[qid] = dict(sorted(rerank_interpolated_scores[qid].items(),key=lambda x:x[1],reverse=True))
         results = calculate_retrieval_metrics(results=rerank_interpolated_scores, qrels=ground_truth)
-
-        # 保存加权分数和指标结果
         with open(os.path.join(outputs_path, f"reranker_point_list_results.json"), 'w') as f:
             json.dump(results, f, indent=2)
-        with open(os.path.join(outputs_path, f"{args.reasoning}_score.json"), 'w') as f:
-            json.dump(rerank_interpolated_scores, f, indent=2)
