@@ -32,7 +32,7 @@ More details can be seen at [Diver paper](https://arxiv.org/abs/2508.07995).
 
 ## TODO List
 
-- [x] Release **DIVER-Reranker**: Release source code and models
+- ✅ Release **DIVER-Reranker**: Release source code and models
 
 
 ## Model Downloads
