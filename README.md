@@ -18,6 +18,8 @@ More details can be seen at [Diver paper](https://arxiv.org/abs/2508.07995).
 3.Merged Reranker: Combines traditional search scores with LLM-based "helpfulness" scores for superior ranking.
 
 ## 🎉 Update
+
+- [2025-11-20] 🚀 We released our reranking model [Diver-GroupRank-7B](https://huggingface.co/AQ-MedAI/Diver-GroupRank-7B) and [Diver-GroupRank-32B](https://huggingface.co/AQ-MedAI/Diver-GroupRank-32B), the inference code for GroupRank can be found at [./Retriever/rerank_groupwise.py](./Retriever/rerank_groupwise.py). Our Diver-GroupRank-32B achieves **46.8** at BRIGHT via test-time scaling, you can see [paper](https://www.arxiv.org/abs/2511.11653) for details.
 - [2025-11-11] Environment installation guide is provided in [./env_requirements/README.md](./env_requirements/README.md) for reproduction. The code for merging pointwise and listwise rerankers is at [./Retriever/rerank_merge_point_and_list.py](./Retriever/rerank_merge_point_and_list.py). 
 - [2025-10-20] 🚀 We released DIVER-Retriever-4B-1020 model at [ModelScope](https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B-1020) and [Hugging Face](https://huggingface.co/AQ-MedAI/Diver-Retriever-4B-1020), which achieve 31.9 at BRIGHT.
 - [2025-10-14] 🚀 We released DIVER-Retriever-1.7B model at [ModelScope](https://modelscope.cn/models/AQ-MedAI/Diver-Retriever-1.7B) and [Hugging Face](https://huggingface.co/AQ-MedAI/Diver-Retriever-1.7B), which achieve 27.3 at BRIGHT.
@@ -30,7 +32,7 @@ More details can be seen at [Diver paper](https://arxiv.org/abs/2508.07995).
 
 ## TODO List
 
-- [ ] Open **DIVER-Reranker**: Release source code and models
+- [x] Release **DIVER-Reranker**: Release source code and models
 
 
 ## Model Downloads
@@ -40,6 +42,8 @@ You can download the following table to see the various parameters for your use 
 
 |      **Model**       | **#Total Params** | **Context Length** |                                                                        **Download**                                                                        |   **BRIGHT**       |
 | :------------------: | :---------------: | :----------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------: | 
+|    Diver-GroupRank-7B    |       7B       |        32K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-GroupRank-7B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-GroupRank-7B
+|    Diver-GroupRank-32B    |       32B       |        32K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-GroupRank-32B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-GroupRank-32B
 |    DIVER-Retriever-4B-1020    |       4B       |        40K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-4B-1020 <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B-1020     | **31.9** |
 |    DIVER-Retriever-4B    |       4B       |        40K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-4B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B     | **28.9** |
 |    DIVER-Retriever-1.7B    |       1.7B       |        40K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-1.7B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-1.7B     | **27.3** |
