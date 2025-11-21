@@ -25,8 +25,8 @@
 
 |      **Model**       | **#Total Params** | **Context Length** |                                                                        **Download**                                                                        |   **BRIGHT**       |
 | :------------------: | :---------------: | :----------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------: | 
-|    Diver-GroupRank-7B    |       7B       |        32K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-GroupRank-7B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-GroupRank-7B
-|    Diver-GroupRank-32B    |       32B       |        32K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-GroupRank-32B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-GroupRank-32B
+|    Diver-GroupRank-7B    |       7B       |        32K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-GroupRank-7B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-GroupRank-7B |  |
+|    Diver-GroupRank-32B    |       32B       |        32K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-GroupRank-32B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-GroupRank-32B |  **46.8** |
 |    DIVER-Retriever-4B-1020    |       4B       |        40K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-4B-1020 <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B-1020     | **31.9** |
 |    DIVER-Retriever-4B    |       4B       |        40K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-4B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B     | **28.9** |
 |    DIVER-Retriever-1.7B    |       1.7B       |        40K         |     [🤗 HuggingFace]https://huggingface.co/AQ-MedAI/Diver-Retriever-1.7B <br>[🤖 ModelScope]https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-1.7B     | **27.3** |
