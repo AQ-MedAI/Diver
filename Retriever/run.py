@@ -1,8 +1,13 @@
 import os
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1])) # project dir
+
 import argparse
 import json
 from tqdm import tqdm
-from retrievers import RETRIEVAL_FUNCS,calculate_retrieval_metrics
+from retrievers import RETRIEVAL_FUNCS
+from utils.eval_util import calculate_retrieval_metrics
 from datasets import load_dataset, Dataset
 
 

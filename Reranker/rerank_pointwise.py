@@ -1,5 +1,9 @@
-import copy
 import os
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1])) # project dir
+
+import copy
 import json
 from tqdm import tqdm, trange
 import argparse
@@ -10,16 +14,16 @@ import torch
 import prompts
 import time 
 import re
-from retrievers import calculate_retrieval_metrics
+from utils.eval_util import calculate_retrieval_metrics
 
 
 
 class Reranker:
-    def __init__(self, task):
-        self.model_name = "Qwen/Qwen2.5-32B-Instruct"
+    def __init__(self, task, model_path):
+        self.model_path = model_path
         self.sampling_params = SamplingParams(temperature=0.6, top_p=0.9, max_tokens=128, logprobs=10)
-        self.tokenizer = get_vllm_tokenizer(self.model_name, trust_remote_code=False)
-        self.model = LLM(model=self.model_name, dtype="bfloat16", tensor_parallel_size=torch.cuda.device_count(), max_model_len=16384)
+        self.tokenizer = get_vllm_tokenizer(self.model_path, trust_remote_code=False)
+        self.model = LLM(model=self.model_path, dtype="bfloat16", tensor_parallel_size=torch.cuda.device_count(), max_model_len=16384)
 
         retrieval_dict = {
                 "aops": prompts.bright_aops,
@@ -85,6 +89,7 @@ if __name__=='__main__':
                         choices=['biology','earth_science','economics','pony','psychology','robotics','theoremqa_questions', "theoremqa_theorems",
                                  'stackoverflow','sustainable_living','aops','leetcode'])
     parser.add_argument('--long_context', action='store_true')
+    parser.add_argument('--model_path', type=str, default='Qwen/Qwen2.5-32B-Instruct')
     parser.add_argument('--retriever_score_file', type=str, default=None)
     parser.add_argument('--input_k', type=int)
     parser.add_argument('--k', type=int)
@@ -122,7 +127,7 @@ if __name__=='__main__':
 
     if not os.path.isfile(score_file_path):
         new_scores = copy.deepcopy(all_scores)
-        model = Reranker(args.task)
+        model = Reranker(args.task, args.model_path)
         for qid,scores in tqdm(all_scores.items()):
             docs = []
             sorted_scores = sorted(scores.items(),key=lambda x:x[1],reverse=True)[:args.input_k]

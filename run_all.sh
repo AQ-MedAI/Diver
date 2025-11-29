@@ -21,5 +21,5 @@ bash retriever_script.sh
 python merge_score.py
 
 # 3. DIVER-Reranker (v1 version with only pointwise reranker), achieving 41.6 NDCG@10 as shown in Table 2 of our paper
-# cd ./Retriever
-bash reranker_script.sh  
+cd ../Reranker
+bash reranker_script.sh  # change script to v1/v2/v3

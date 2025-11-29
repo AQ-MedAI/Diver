@@ -19,8 +19,8 @@ More details can be seen at [Diver paper](https://arxiv.org/abs/2508.07995).
 
 ## 🎉 Update
 
-- [2025-11-20] 🚀 We released our reranking model [Diver-GroupRank-7B](https://huggingface.co/AQ-MedAI/Diver-GroupRank-7B) and [Diver-GroupRank-32B](https://huggingface.co/AQ-MedAI/Diver-GroupRank-32B). The inference code for **GroupRank** can be found at [./Retriever/rerank_groupwise.py](./Retriever/rerank_groupwise.py). Our Diver-GroupRank-32B achieves **46.8** at BRIGHT via test-time scaling. The details can be found at [GroupRank paper](https://www.arxiv.org/abs/2511.11653).
-- [2025-11-11] Environment installation guide is provided in [./env_requirements/README.md](./env_requirements/README.md) for reproduction. The code for merging pointwise and listwise rerankers is at [./Retriever/rerank_merge_point_and_list.py](./Retriever/rerank_merge_point_and_list.py). 
+- [2025-11-20] 🚀 We released our **GroupRank** reranking model [Diver-GroupRank-7B](https://huggingface.co/AQ-MedAI/Diver-GroupRank-7B) and [Diver-GroupRank-32B](https://huggingface.co/AQ-MedAI/Diver-GroupRank-32B). The inference and SFT training code can be found at [./Reranker/rerank_groupwise.py](./Reranker/rerank_groupwise.py) and [./Reranker/train_sft_groupwise_reranker.sh](./Reranker/train_sft_groupwise_reranker.sh). Our Diver-GroupRank-32B achieves **46.8** at BRIGHT via test-time scaling. The details can be found at [GroupRank paper](https://www.arxiv.org/abs/2511.11653).
+- [2025-11-11] Environment installation guide is provided in [./env_requirements/README.md](./env_requirements/README.md) for reproduction. The code for merging pointwise and listwise rerankers is at [./Reranker/rerank_merge_point_and_list.py](./Reranker/rerank_merge_point_and_list.py). 
 - [2025-10-20] 🚀 We released DIVER-Retriever-4B-1020 model at [ModelScope](https://www.modelscope.cn/models/AQ-MedAI/Diver-Retriever-4B-1020) and [Hugging Face](https://huggingface.co/AQ-MedAI/Diver-Retriever-4B-1020), which achieve 31.9 at BRIGHT.
 - [2025-10-14] 🚀 We released DIVER-Retriever-1.7B model at [ModelScope](https://modelscope.cn/models/AQ-MedAI/Diver-Retriever-1.7B) and [Hugging Face](https://huggingface.co/AQ-MedAI/Diver-Retriever-1.7B), which achieve 27.3 at BRIGHT.
 - [2025-09-27] 🎉 Our Diver-Retriever-4B model have achieved monthly 2.64k+ downloads at [🤗 HuggingFace](https://huggingface.co/AQ-MedAI/Diver-Retriever-4B) ! 
@@ -740,7 +740,7 @@ If you think our work is helpful, please feel free to give us a cite.
 
 ## Acknowledgement
 
-We thank prior works and their open-source repositories: [BRIGHT](https://github.com/xlang-ai/BRIGHT), [ReasonIR](https://github.com/facebookresearch/ReasonIR), [RaDer](https://anonymous.4open.science/r/project-D27D/README.md), [ThinkQE](https://github.com/Yibin-Lei/Think_QE), [Qwen3-Embedding](https://github.com/QwenLM/Qwen3-Embedding).
+We thank prior works and their open-source repositories: [BRIGHT](https://github.com/xlang-ai/BRIGHT), [ReasonIR](https://github.com/facebookresearch/ReasonIR), [RaDer](https://anonymous.4open.science/r/project-D27D/README.md), [ThinkQE](https://github.com/Yibin-Lei/Think_QE), [Qwen3-Embedding](https://github.com/QwenLM/Qwen3-Embedding), [ReasonRank](https://github.com/8421BCD/ReasonRank).
 
 ## Star History
 

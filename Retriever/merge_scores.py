@@ -1,9 +1,13 @@
 import os
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1])) # project dir
+
 import json
 import argparse
 from datasets import load_dataset
 import math
-from retrievers import calculate_retrieval_metrics
+from utils.eval_util import calculate_retrieval_metrics
 
 
 def reassign_score(scores):

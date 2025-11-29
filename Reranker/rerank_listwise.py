@@ -1,6 +1,10 @@
 # Modified from: https://github.com/jataware/XRR2/blob/main/xrr2/rerank.py
 
 import os
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1])) # project dir
+
 import json
 from tqdm import tqdm, trange
 import argparse
@@ -8,6 +12,7 @@ from datasets import load_dataset
 from openai import OpenAI
 import re
 import concurrent.futures 
+from utils.eval_util import calculate_retrieval_metrics
 
 
 
@@ -189,10 +194,8 @@ Please strictly follow the format to output a list of {TOPK} ids corresponding t
             assert not did in new_scores[e['id']]
             assert not did in ground_truth[e['id']]
 
-    from retrievers import calculate_retrieval_metrics
     results = calculate_retrieval_metrics(results=new_scores, qrels=ground_truth)
     with open(os.path.join(outputs_path, "reranker_results.json"), 'w') as f:
         json.dump(results, f, indent=2)
 
     print(f"Results saved to {os.path.join(outputs_path, 'reranker_results.json')}")
-
