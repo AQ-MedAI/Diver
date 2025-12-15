@@ -2,7 +2,7 @@ dataset_source="../data/BRIGHT"
 # tasks=("biology" "earth_science" "economics" "psychology" "robotics" "stackoverflow" "sustainable_living" "leetcode" "pony" "aops" "theoremqa_theorems" "theoremqa_questions")
 tasks=("biology")
 
-model_path="../model/Diver-Retriever-4B".  # retriever model path
+model_path="../models/Diver-Retriever-4B".  # retriever model path
 generation_model_path="../model/DeepSeek-R1-Distill-Qwen-14B"
 
 model_name=diver-retriever

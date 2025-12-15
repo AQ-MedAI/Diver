@@ -9,7 +9,7 @@ BS=-1
 
 for MODEL in ${models[@]}; do
     for TASK in ${tasks[@]}; do
-        echo "Running task: $task"
+        echo "Running task: $TASK"
         # # Using the original query achieves 28.9 NDCG@10, as reported in Table 3 of our paper: https://arxiv.org/pdf/2508.07995
         # CUDA_VISIBLE_DEVICES=3 python run.py --task $TASK --model $MODEL --output_dir output/${MODEL}_${REASONING}_reasoning --cache_dir ${dataset_source}/cache/cache_${MODEL} --encode_batch_size $BS 
 
