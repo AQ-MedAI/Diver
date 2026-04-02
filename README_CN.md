@@ -16,6 +16,7 @@
 
 ## 待办列表
 
+- ⬜ 开源 **DIVER-VL-Embedding** 与 **DIVER-VL-Reranker**：发布源码与模型
 - ✅ 开源 **DIVER-Reranker**：发布源码与模型
 
 
